@@ -30,7 +30,7 @@ namespace SonarLuna
         {
             bmp = new Bitmap(largura + 1, altura + 1);
 
-            this.BackColor = Color.Black;
+            panel1.BackColor = Color.Black;
 
             centerX = largura / 2;
             centerY = altura / 2;
@@ -70,14 +70,15 @@ namespace SonarLuna
                 ty = centerY - (int)(guia * Math.Cos(Math.PI * vrau / 180));
             }
 
+            //circulo do sonar
             g.DrawEllipse(p, 0, 0, largura, altura);
             g.DrawEllipse(p, 80, 80, largura - 160, altura - 160);
 
-            //linha verde
+            //linhas verticais e horizontais
             g.DrawLine(p, new Point(centerX, 0), new Point(centerX, altura));
             g.DrawLine(p, new Point(0, centerY), new Point(largura, centerY));
 
-            //guia
+            //Ponteiro
             g.DrawLine(new Pen(Color.Black, 2f), new Point(centerX, centerY), new Point(tx, ty));
             g.DrawLine(p, new Point(centerX, centerY), new Point(x, y));
 
