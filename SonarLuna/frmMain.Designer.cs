@@ -30,16 +30,16 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             splitContainer1 = new SplitContainer();
+            pictureBox2 = new PictureBox();
             panel1 = new Panel();
             pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)splitContainer1).BeginInit();
             splitContainer1.Panel1.SuspendLayout();
             splitContainer1.Panel2.SuspendLayout();
             splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // splitContainer1
@@ -58,6 +58,18 @@
             splitContainer1.Size = new Size(984, 561);
             splitContainer1.SplitterDistance = 182;
             splitContainer1.TabIndex = 0;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
+            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(7, 477);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(167, 72);
+            pictureBox2.TabIndex = 0;
+            pictureBox2.TabStop = false;
             // 
             // panel1
             // 
@@ -78,25 +90,14 @@
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
-            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(7, 477);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(167, 72);
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
-            // 
             // frmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(984, 561);
             Controls.Add(splitContainer1);
-            MaximumSize = new Size(1000, 600);
-            MinimumSize = new Size(1000, 600);
+            MaximumSize = new Size(1920, 1080);
+            MinimumSize = new Size(680, 400);
             Name = "frmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sonar do Luna";
@@ -105,9 +106,9 @@
             splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)splitContainer1).EndInit();
             splitContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 

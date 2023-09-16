@@ -9,7 +9,7 @@ namespace SonarLuna
     {
         public System.Windows.Forms.Timer temporizador = new System.Windows.Forms.Timer();
 
-        int largura = 300, altura = 300, guia = 150;
+        int largura = 360, altura = 360, guia = 180;
 
         int graus;
         int centerX, centerY;
@@ -18,7 +18,7 @@ namespace SonarLuna
         int tx, ty, lim = 20;
 
         Bitmap bmp;
-        Pen p;
+        Pen p, pLinha;
         Graphics g;
 
         public frmMain()
