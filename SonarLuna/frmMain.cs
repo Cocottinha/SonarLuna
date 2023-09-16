@@ -37,7 +37,7 @@ namespace SonarLuna
 
             graus = 0;
 
-            temporizador.Interval = 30; //ms
+            temporizador.Interval = 30; //ms, demora aproximadamente 11/12 segundos pra dar uma volta
             temporizador.Tick += new EventHandler(timer_Elapsed);
             temporizador.Start();
         }
@@ -70,9 +70,11 @@ namespace SonarLuna
                 ty = centerY - (int)(guia * Math.Cos(Math.PI * vrau / 180));
             }
 
-            //circulo do sonar
+            //circulos do sonar
             g.DrawEllipse(p, 0, 0, largura, altura);
-            g.DrawEllipse(p, 80, 80, largura - 160, altura - 160);
+            g.DrawEllipse(p, 90, 90, largura - 180, altura - 180);
+            g.DrawEllipse(p, 45, 45, largura - 90, altura - 90);
+            g.DrawEllipse(p, 135, 135, largura - 270, altura - 270);
 
             //linhas verticais e horizontais
             g.DrawLine(p, new Point(centerX, 0), new Point(centerX, altura));
