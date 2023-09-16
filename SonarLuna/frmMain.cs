@@ -1,3 +1,4 @@
+using System.Drawing.Design;
 using System.Drawing.Drawing2D;
 using System.Threading.Tasks;
 using System.Timers;
@@ -18,8 +19,11 @@ namespace SonarLuna
         int tx, ty, lim = 20;
 
         Bitmap bmp;
-        Pen p, pLinha;
-        Graphics g;
+        Pen p, pL, ponteiro;
+        Graphics g, entidade;
+
+        int a = 190;
+        int b = 45;
 
         public frmMain()
         {
@@ -40,10 +44,22 @@ namespace SonarLuna
             temporizador.Interval = 30; //ms, demora aproximadamente 11/12 segundos pra dar uma volta
             temporizador.Tick += new EventHandler(timer_Elapsed);
             temporizador.Start();
+            Entidade();
+        }
+        private void Entidade()
+        {
+            a = a + 5;
+            b = b + 5;
+            entidade = Graphics.FromImage(bmp);
+            pL = new Pen(Color.Red, 1f);
+            entidade.DrawEllipse(pL, a,b,10,10 );
+            
         }
         private void timer_Elapsed(object sender, EventArgs e)
         {
             p = new Pen(Color.LimeGreen, 1f);
+
+            ponteiro = new Pen(Color.LimeGreen, 4f);
 
             g = Graphics.FromImage(bmp);
 
@@ -79,22 +95,25 @@ namespace SonarLuna
             //linhas verticais e horizontais
             g.DrawLine(p, new Point(centerX, 0), new Point(centerX, altura));
             g.DrawLine(p, new Point(0, centerY), new Point(largura, centerY));
-
+         
             //Ponteiro
-            g.DrawLine(new Pen(Color.Black, 2f), new Point(centerX, centerY), new Point(tx, ty));
-            g.DrawLine(p, new Point(centerX, centerY), new Point(x, y));
-
+            g.DrawLine(new Pen(Color.Black, 4f), new Point(centerX, centerY), new Point(tx, ty));
+            g.DrawLine(ponteiro, new Point(centerX, centerY), new Point(x, y));
+          
             //carregar a picturebox
             pictureBox1.Image = bmp;
             g.Dispose();
             p.Dispose();
 
             //atualiza radar
-            graus++;
+            graus++;           
             if (graus == 360)
             {
                 graus = 0;
+                //Chamo a entidade q foi encontrada pelo radar
+                Entidade();
             }
+
         }
     }
 }
